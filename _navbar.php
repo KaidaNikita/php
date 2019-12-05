@@ -1,3 +1,4 @@
+<?php include_once "login.php" ?>
 
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/admin.php">Navbar</a>
@@ -8,14 +9,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="userprofile.php">
+        <a class="nav-link" href="/">
           <i class="fa fa-home"></i>
           Home
           <span class="sr-only">(current)</span>
           </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">
+      <a class="nav-link" >
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
         </a>
       </li>

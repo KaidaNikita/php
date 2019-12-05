@@ -9,6 +9,7 @@ yarn.lock
 *.userosscache
 *.sln.docstates
 
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -25,6 +26,7 @@ bin/
 Bin/
 obj/
 Obj/
+shawarma/
 
 # Visual Studio 2015 cache/options directory
 .vs/

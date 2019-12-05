@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $stmt= $dbh->prepare($sql);
        $stmt->execute([$email, $password, $save_name]);
 
-       session_start();
+      // session_start();
 
 
 //        $sth = $dbh->prepare("SELECT Id, Email, Password,Image FROM `tbl_users` WHERE Image=$save_name");

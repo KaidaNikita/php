@@ -36,7 +36,7 @@
                 $errors["login"]="Користувач не знайдений!";
             }
         if(count($errors)==0&&$login==true) {
-            session_start();
+            
             $_SESSION['id']=$id;
             header("Location: /index.php");
             exit;
@@ -44,7 +44,7 @@
     }
 ?>
 
-<?php include "_header.php"; ?>
+<?php //include "_header.php"; ?>
 <?php include_once "input-helper.php"/*Використав input-helper.php для зручності*/?>
 
 

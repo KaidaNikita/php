@@ -17,7 +17,7 @@
 
 <?php
 include_once "input-helper.php";
-session_start();
+//session_start();
 $id=$_SESSION['id'];
 //$id=$_GET['id'];
 $sth = $dbh->prepare("SELECT Id, Email, Password,Image FROM `tbl_users` WHERE Id=$id");
