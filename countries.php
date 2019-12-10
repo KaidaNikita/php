@@ -5,10 +5,34 @@
 <?php
 $errors = array();
 $country = '';
+$correct=false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
+    if (isset($_POST['text']) and !empty($_POST['text'])) {
+        $country = $_POST['text']. "\n";
+    } else {
+        $errors["text"] = "Поле є обов'язковим";
+    }
 
+$fp = fopen("dictionary.txt", "r");
+if ($fp)
+{
+while(!feof($fp))
+{
+    $text=fgets($fp, 999);
+    if($country==$text)
+    {
+        $correct=true;
+        break;
+    }
+}
+}
+    $fp = fopen("countries.txt", "a+");
+    if ($fp and count($errors) == 0 and $correct)
+    {
+        fwrite($fp, $country."\n");
+    }
 }
 ?>
 
@@ -23,12 +47,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <?php create_input("text", "Країна", "text", $errors); ?>
 
         <select class="selectpicker">
-        <option>Mustard</option>
-         <option>Ketchup</option>
-         <option>Relish</option>
-        </select>
-
-
+       
+<?php
+$fp = fopen("countries.txt", "r");
+if ($fp)
+{
+while(!feof($fp))
+{
+    $text=fgets($fp, 999);
+    echo '
+    <option>
+    '.$text.'
+    </option>
+    ';
+}
+}
+?>
+</select>
             <div class="form-group">
                 <input type="submit" class="btnSubmit" value="Добавити"/>
             </div>
