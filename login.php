@@ -44,23 +44,16 @@
     }
 ?>
 
-<?php //include "_header.php"; ?>
+<?php include "_header.php"; ?>
 <?php include_once "input-helper.php"/*Використав input-helper.php для зручності*/?>
 
 
 
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="center">Вхід в акаунт</h3>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
       </div>
-      <div class="modal-body">
         <div class="login-container">
-            <div class="row">
+            <div class="row"> 
+            <!-- <h3 class="center">Вхід в акаунт</h3> -->
                 <div class="offset-md-3 col-md-6">
                     
                     <?php if(count($errors)!=0) { ?>
@@ -89,15 +82,6 @@
                         </div>
                     </form>
                 </div>
-                
-            </div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-      </div>
-    </div>
 
   </div>
 </div>

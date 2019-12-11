@@ -1,5 +1,5 @@
-<?php include_once "login.php" ?>
-
+<?php session_start(); ?>
+<?php// include_once "login.php" ?>
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/admin.php">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,9 +16,11 @@
           </a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" >
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
-        </a>
+      <a class="nav-link" href="/login.php">
+          <i class="fa fa-home"></i>
+          Login
+          <span class="sr-only">(current)</span>
+          </a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">

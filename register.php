@@ -1,3 +1,43 @@
+<?php include "_header.php"; ?>
+
+<?php
+class User
+{
+  private $login;
+  private $pass;
+  private $img;
+  function __construct($login,$password,$image)
+  {
+    $this->login=$login;
+    $this->pass=$password;
+    $this->img=$image;
+  }
+  function Show()
+  {
+    echo '
+    <table class="table">
+    <thead>
+      <tr>  
+        <th>Email</th>
+        <th>Password</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>'.$this->login.'</td>
+        <td>'.$this->pass.'</td>
+        <td> <img width="50px" height="50px" src="'.$this->img.'" alt="Фото"/></td>
+    </tr>
+    </tbody>
+    </table>
+    ';
+  }
+}
+
+?>
+
+
 <?php
 $errors = array();
 $email = '';
@@ -18,13 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors["password"] = "Поле є обов'язковим";
     }
 
-    session_start();
+    //session_start();
 	if (md5($_POST['norobot']) == $_SESSION['randomnr2'])	{ 
-        //$password = "Ghj,ktv";
-		// // here you  place code to be executed if the captcha test passes
-		// 	echo "Hey great , it appears you are not a robot";
 	}	else {  
-		// here you  place code to be executed if the captcha test fails
         $errors["captcha"] = "Не вірна каптча";
 	}
 
@@ -49,13 +85,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // $_SESSION['user_id']="22";//витянуть Id нормальний
 //}
        
-       header("Location: /userprofile.php");
-       exit;
+    $user=new User($email,$password,$save_name);
+    $user->Show();
+       //header("Location: /register.php");
+       //exit;
     }
 }
 ?>
 
-<?php include "_header.php"; ?>
+
 <?php include_once "input-helper.php"?>
 
 <div class="row mt-3">

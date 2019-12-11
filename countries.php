@@ -21,7 +21,7 @@ if ($fp)
 while(!feof($fp))
 {
     $text=fgets($fp, 999);
-    if($country==$text)
+    if($country!=$text)
     {
         $correct=true;
         break;
